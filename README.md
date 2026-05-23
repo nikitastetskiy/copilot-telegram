@@ -97,6 +97,29 @@ automatically; otherwise it shows an interactive picker.
   into the original Terminal window via AppleScript — without touching the clipboard
   or whichever window happens to be focused
 
+## Running with the screen off
+
+The watcher keeps working when your **display is off but the Mac is still awake**
+— `screencapture` reads window contents from WindowServer regardless of display
+state, and AppleScript keystroke injection still reaches Terminal.app.
+
+To keep the Mac itself from sleeping:
+
+```bash
+caffeinate -i python copilot_watcher.py --pick
+```
+
+Or set System Settings → Battery (or Energy Saver) → "Prevent automatic sleeping
+when the display is off".
+
+Caveats:
+
+- **Lock screen active**: screenshots may still work, but keystroke injection
+  won't — System Events can't deliver keys to apps behind `loginwindow`. Either
+  disable auto-lock, or use `caffeinate -di` to keep the display awake as well.
+- **Full system sleep** (lid closed without external power/display, idle sleep):
+  the Python process is paused; nothing fires until wake.
+
 ## Privacy & Data Handling
 
 - **Terminal screenshots are uploaded to Telegram.** Every time a prompt is detected, a screenshot of the watched Terminal window is sent via the Telegram Bot API. It will be visible in the configured Telegram chat and may be retained per [Telegram's data retention policy](https://telegram.org/privacy).
