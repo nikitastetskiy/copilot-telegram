@@ -1,0 +1,13 @@
+# FIXTURE: selection — Style B numbered, 5 options, ❯ on option 3 (selected_index=2)
+# Exercises NUMBERED_OPT_RE + has_box=True (╭─╮ border present).
+# Expected classification: kind=selection, selected_index=2
+# options: [("1","Run all tests"), ("2","Run failing tests only"),
+#           ("3","Run with coverage"), ("4","Open test report"), ("5","Exit")]
+╭──────────────────────────────────────────╮
+│   1. Run all tests                       │
+│   2. Run failing tests only              │
+│ ❯ 3. Run with coverage                   │
+│   4. Open test report                    │
+│   5. Exit                                │
+│ ↑/↓ to navigate · enter to select       │
+╰──────────────────────────────────────────╯

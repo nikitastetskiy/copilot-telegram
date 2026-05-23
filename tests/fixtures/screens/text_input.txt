@@ -1,0 +1,10 @@
+# FIXTURE: text_input — ask_user text widget with "enter to submit" footer
+# Expected classification: kind=text_input
+# Requires: footer matches FOOTER_TEXT_RE ("to submit") AND has_box=True (╭─╮ present)
+╭──────────────────────────────────────╮
+│ Question                             │
+│ What would you like to name this?   │
+│                                      │
+│ > _                                  │
+│ enter to submit                      │
+╰──────────────────────────────────────╯

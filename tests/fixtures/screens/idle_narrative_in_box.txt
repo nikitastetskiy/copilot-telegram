@@ -1,0 +1,10 @@
+# FIXTURE: idle — agent narrative inside pipe-bordered block, no real widget footer
+# Expected classification: kind=idle (current parser) and idle (post-E8 tightening)
+# Reason (current): no box-border line (╭─╮ etc.) so has_box=False; footer line
+#   "│ Use ↑/↓ keys or press enter to submit … │" would match FOOTER_TEXT_RE but
+#   then text_input branch is gated on has_box → skipped → idle.
+# Reason (post-E8): tightened FOOTER_TEXT_RE requires leading directional prefix;
+#   the prose phrasing doesn't match → footer_idx stays None → idle.
+│ Use ↑/↓ keys or press enter to submit your selection from the list. │
+│ Here is a table | col1 | col2 |                                     │
+│ row1             | aaa  | bbb  |                                     │

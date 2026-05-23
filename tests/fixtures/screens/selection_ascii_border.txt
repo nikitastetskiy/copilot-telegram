@@ -1,0 +1,15 @@
+# FIXTURE: selection — ASCII-downgraded box borders (+ and - instead of ╭╮╰╯─)
+# Exercises BOX_BORDER_RE extension planned for E8 (adds +, -, = characters).
+# Current parser (pre-E8): has_box=False (BOX_BORDER_RE doesn't know +/-)
+#   BUT INDICATOR_RE still fires on ●/○ lines; bilateral | pipes pass the footer
+#   guard → currently classifies as kind=selection even without has_box.
+# Post-E8: BOX_BORDER_RE matches + borders → has_box=True → NUMBERED_OPT_RE also
+#   available, further tightening the parse path.
+# Expected classification (both pre- and post-E8): kind=selection, selected_index=0
+# options: [("1","Option Alpha"), ("2","Option Beta"), ("3","Option Gamma")]
++------------------------------------------+
+| ● Option Alpha                           |
+| ○ Option Beta                            |
+| ○ Option Gamma                           |
+| ↑/↓ to navigate · enter to select       |
++------------------------------------------+

@@ -1,0 +1,9 @@
+# FIXTURE: idle — narrative with pipe chars and widget-like keywords, should stay idle
+# Expected classification: kind=idle
+# Reason: bilateral pipes present (│ on each side) but the lines do NOT form a real
+#   Copilot widget — there is no box-border line (╭─╮) so has_box=False, which gates
+#   the text_input branch.  No [y/N] match in YN_RE.  Result: idle.
+│ Step │ Action                                │
+│  1   │ Press enter to confirm your selection │
+│  2   │ Use arrows to navigate options        │
+$

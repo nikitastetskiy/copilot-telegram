@@ -1,0 +1,11 @@
+# FIXTURE: selection — Style A dots, 3 options, selected_index=1 (Bug #5 scenario)
+# Bug #5: inject_response used saturating 14-ups instead of delta from selected_index.
+# With selected_index=1 and target=0, delta = -1 (one up). Old code sent 14 ups → wrong.
+# Expected classification: kind=selection, selected_index=1
+# options: [("1","Edit and run again"), ("2","Discard changes"), ("3","Open in editor")]
+╭──────────────────────────────────────╮
+│ ○ Edit and run again                 │
+│ ● Discard changes                    │
+│ ○ Open in editor                     │
+│ ↑/↓ to navigate · enter to select   │
+╰──────────────────────────────────────╯

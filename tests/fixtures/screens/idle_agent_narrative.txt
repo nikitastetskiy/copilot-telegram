@@ -1,0 +1,15 @@
+# FIXTURE: idle — agent narrative, false-positive candidate (no pipes)
+# Expected classification: kind=idle
+# Reason: no │ or | in active zone → quick-reject fires immediately.
+# Footer-like phrases ("to select", "to submit", "↑/↓ to navigate") appear
+# in prose but without box pipes, so they never reach the footer scan loop.
+The tool will ask you to select an option from the list.
+Press enter to submit your choice when you are ready.
+Use ↑/↓ to navigate the results panel if it appears.
+
+Run the following command and wait for the prompt:
+
+  gh copilot suggest "list all running containers"
+
+Then answer the follow-up question that appears.
+$

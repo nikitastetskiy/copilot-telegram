@@ -1,0 +1,15 @@
+# FIXTURE: idle — plain shell prompt, nothing interesting
+# Expected classification: kind=idle
+# Reason: no │ or | characters in active zone → quick-reject fires immediately.
+$ cd /home/user/project
+$ git fetch --prune origin
+From github.com:org/project
+ * [new branch] feat/settings -> origin/feat/settings
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+$ echo "all good"
+all good
+$ _

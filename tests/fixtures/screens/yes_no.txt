@@ -1,0 +1,8 @@
+# FIXTURE: yes_no — real shell [y/N] prompt with bilateral │ pipes
+# Expected classification (current, pre-Bug-#3-fix): kind=yes_no
+# Expected classification (post-Bug-#3-fix / E6): kind=yes_no  ← still yes_no
+# The bilateral pipe guard added by E6 allows this because the line starts AND
+# ends with │, making it an unambiguous yn prompt (not a table cell).
+# This fixture is the VALID yes_no case — contrast with false_positive_yn_in_table.txt
+# which has │ col separators inside the line (multi-column table cell = false positive).
+│ Overwrite existing file? [y/N] │

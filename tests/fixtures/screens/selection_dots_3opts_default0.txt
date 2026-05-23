@@ -1,0 +1,9 @@
+# FIXTURE: selection — Style A dots, 3 options, selected_index=0 (option 1 active)
+# Expected classification: kind=selection, selected_index=0
+# options: [("1","Edit and run again"), ("2","Discard changes"), ("3","Open in editor")]
+╭─────────────────────────────────────╮
+│ ● Edit and run again                │
+│ ○ Discard changes                   │
+│ ○ Open in editor                    │
+│ ↑/↓ to navigate · enter to select  │
+╰─────────────────────────────────────╯

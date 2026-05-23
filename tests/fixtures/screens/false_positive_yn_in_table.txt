@@ -1,0 +1,14 @@
+# FIXTURE: idle — [y/N] inside a markdown table cell with bilateral │ pipes
+# Expected classification (pre-Bug-#3-fix): kind=yes_no  ← THIS IS THE BUG
+# Expected classification (post-Bug-#3-fix / E6): kind=idle
+# Reason for current false-positive: YN_RE matches [y/N] in the stripped line;
+#   Bug #3 is that yes_no branch has no bilateral-pipe guard.
+# After E6 fix: yes_no branch requires the matching line to start AND end with │/|;
+#   "│ Default [y/N] │" inner pipe makes this a multi-column table row that the
+#   guard correctly rejects (because _strip_box removes outer pipes leaving the
+#   inner │ exposed — the raw line still has bilateral outer pipes, which ironically
+#   means the guard PASSES; the fix must check that the content itself is unambiguous).
+# NOTE: The E6 test that exercises this fixture is a RED test against pre-fix code.
+│ Prompt    │ Default [y/N] │ Notes             │
+│ overwrite │ n             │ safe default      │
+$

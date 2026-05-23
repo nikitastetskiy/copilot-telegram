@@ -1,0 +1,33 @@
+
+# Local secrets
+.env
+
+# Workspace-only files (not part of the published project)
+AGENTS.md
+PORTABILITY.md
+copilot-instructions.md
+.yui.json
+.knowledge/
+.plans/
+.rfcs/
+.github/agents/
+.github/instructions/
+yui-soul/
+copilot-telegram-bot-just-reference-for-script/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+

@@ -1,0 +1,11 @@
+# FIXTURE: selection — Style A, includes "Other (type your answer)" as last option
+# Expected classification: kind=selection, selected_index=0
+# build_keyboard must HIDE the "Other" button from the inline keyboard (E2 test).
+# options: [("1","Accept suggestion"), ("2","Reject suggestion"),
+#           ("3","Other (type your answer)")]
+╭──────────────────────────────────────────╮
+│ ● Accept suggestion                      │
+│ ○ Reject suggestion                      │
+│ ○ Other (type your answer)               │
+│ ↑/↓ to navigate · enter to select       │
+╰──────────────────────────────────────────╯
