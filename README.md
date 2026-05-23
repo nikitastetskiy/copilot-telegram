@@ -12,7 +12,7 @@ so you can unblock the session from your phone without sitting at your desk.
 
 ## Demo
 
-> _Demo GIF coming soon._
+![demo](docs/demo.gif)
 
 ## Status
 
