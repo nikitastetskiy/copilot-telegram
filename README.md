@@ -12,7 +12,7 @@ so you can unblock the session from your phone without sitting at your desk.
 
 ## Demo
 
-![demo](docs/demo.gif)
+<p align="center"><img src="docs/demo.gif" alt="demo" /></p>
 
 ## Status
 
